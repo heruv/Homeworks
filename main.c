@@ -10,7 +10,6 @@ int main() {
     printf("R must be more then 0! \n");
     while (1 == 1)
     {
-
         printf("enter: ");
         scanf("%f", &R);
         
