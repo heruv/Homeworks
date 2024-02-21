@@ -14,6 +14,7 @@ int correctCheker(char* arrptr)
 		{
 			break;
 		}
+		
 		char* ptr = arrptr;
 
 		if (*(arrptr) == '{' )
@@ -21,15 +22,11 @@ int correctCheker(char* arrptr)
 			switch (*(ptr + 1))
 			{
 			case ')':
-
 				j--;
 				break;
-
 			case ']':
-
 				k--;
 				break;
-
 			}
 			i++;
 		}
@@ -43,12 +40,10 @@ int correctCheker(char* arrptr)
 			switch (*(ptr + 1))
 			{
 			case '}':
-
 				i--;
 				break;
 			case ']':
 				k--;
-
 				break;
 			}
 			j++;
@@ -63,15 +58,11 @@ int correctCheker(char* arrptr)
 			switch (*(ptr + 1))
 			{
 			case '}':
-
 				i--;
 				break;
-
 			case ')':
-
 				j--;
 				break;
-
 			}
 			++k;
 		}
@@ -94,7 +85,6 @@ int main()
 	
 	while (correctCheker(ptr))
 	{
-
 		fgets(buffer, 25, stdin);
 		if (strlen(buffer) > 21)
 		{
@@ -105,6 +95,5 @@ int main()
 	
 correctCheker(ptr);	
 	
-
 	return 0;
 }
