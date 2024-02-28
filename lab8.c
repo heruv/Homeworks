@@ -3,35 +3,62 @@
 #include <stdlib.h>
 #include <time.h>
 
-int min(int* arrptr) {
-  int epsilon = INT_MAX;
+int minimal(int* arrptr)
+{
+    int int_min = INT_MAX;
+    int* temp = arrptr;
+    int i = 0;
 
-  for (int i = 0; i < 21; i++) {
-    int arr = *(arrptr);
+    for (arrptr; arrptr <= (temp+19); arrptr++)
+    {
+        int cell_value = *(arrptr);
 
-    if (epsilon>arr) {
-      epsilon = arr;
+        if (int_min>cell_value) 
+        {
+            int_min = cell_value;
+        } 
     }
 
-    arrptr++;
-  }
-
-  printf("the smalest number: %d\n", epsilon);
-  return epsilon;
+    return int_min;
 }
 
-int main() {
-  srand(time(NULL));
 
-  int arr[21];
+void custom_sum(int* arrptr) 
+{   
+    int* temp = arrptr;
+    int* first_positive;
+    int* last_positive;
 
-  for (int i = 0; i < 21; i++) {
-    arr[i] = -100 + rand() % 200;
-  }
+    for (arrptr; arrptr < (temp+19); arrptr++) 
+    {
+        int cell_value = *(arrptr);
 
-  int* ptr = arr;
+        if (cell_value>0)
+        {
+            first_positive = cell_value;
+            continue;
+        }
+    }
+}
 
-  min(ptr);
 
-  return 0;
+int main() 
+{
+    srand(time(NULL));
+
+    int arr[20];
+
+    for (int i = 0; i < 20; i++)
+    {
+        arr[i] = -100 + rand() % 200;
+        printf("elem: %d\n", arr[i]);
+    }
+
+    int* ptr = arr;
+
+    printf("the smalest number: %d\n", minimal(ptr));
+
+    custom_sum(ptr);
+   
+    return 0;
 }
