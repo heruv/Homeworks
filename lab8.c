@@ -23,25 +23,6 @@ int minimal(int* arrptr)
 }
 
 
-void custom_sum(int* arrptr) 
-{   
-    int* temp = arrptr;
-    int* first_positive;
-    int* last_positive;
-
-    for (arrptr; arrptr < (temp+19); arrptr++) 
-    {
-        int cell_value = *(arrptr);
-
-        if (cell_value>0)
-        {
-            first_positive = cell_value;
-            continue;
-        }
-    }
-}
-
-
 int main() 
 {
     srand(time(NULL));
