@@ -22,28 +22,25 @@ int minimal(int* arrptr)
     return int_min;
 }
 
-void custom_sum(int* arrptr)
-{
+
+void custom_sum(int* arrptr) 
+{   
     int* temp = arrptr;
+    int* first_positive;
+    int* last_positive;
 
-    int positive_num = 0;
-    int sum=0;
-
-    for (arrptr; arrptr < (temp + 19); arrptr++)
+    for (arrptr; arrptr < (temp+19); arrptr++) 
     {
         int cell_value = *(arrptr);
 
-        if (cell_value > 0) positive_num = cell_value;
-
-        while (cell_value != positive_num+1)
+        if (cell_value>0)
         {
-            sum += cell_value;
-            break;
+            first_positive = cell_value;
+            continue;
         }
     }
-
-    printf("sum = %d\n", sum);
 }
+
 
 int main() 
 {
